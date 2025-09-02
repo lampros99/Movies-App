@@ -1,6 +1,7 @@
 /* eslint-disable react-refresh/only-export-components */
 import { createContext, useState, useEffect, useContext } from "react";
 import api from "../api";
+const DEMO = import.meta.env.VITE_DEMO === 'true';
 
 export const AuthContext = createContext();
 
@@ -10,6 +11,15 @@ export function AuthProvider({ children }) {
 
   // ---- LOGIN ----
   const login = async (email, password) => {
+    if (DEMO) {
+    const fakeUser = { id: 1, name: 'User', email: email || 'user@demo.com' };
+    const fakeToken = 'demo-token';
+    setUser(fakeUser);
+    setToken(fakeToken);
+    localStorage.setItem('user', JSON.stringify(fakeUser));
+    localStorage.setItem('token', fakeToken);
+    return true;
+    }
     try {
       const res = await api.post(`/api/auth/login`, { email, password });
       const { user: userData, token: tokenValue } = res.data || {};

@@ -1,7 +1,7 @@
 import React from 'react'
+import { HashRouter as BrowserRouter } from 'react-router-dom'
 import { AuthProvider } from './contexts/AuthContext.jsx'
 import { createRoot } from 'react-dom/client'
-import { BrowserRouter } from 'react-router-dom'
 import '../style.css'
 import App from './App.jsx'
 import { FavoritesProvider } from './contexts/FavoritesContext.jsx'

@@ -12,7 +12,7 @@
 
 
  **Live Demo:** 
- 🔗 **[Click here to view the app](https://lampros99.github.io/CF7-Final-Project)**
+ 🔗 **[Click here to view the app](https://lampros99.github.io/Movies-App/)**
 
 ---
 

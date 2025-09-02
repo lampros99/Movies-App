@@ -12,8 +12,8 @@
 
 
  **Live Demo:** 
- 🔗 **[Click here to view the app](https://lampros99.github.io/Movies-App/)**
-
+ **Live Demo:**  
+🔗 **[Click here to view the app](https://lampros99.github.io/Movies-App/)**
 ---
 
 ## Overview

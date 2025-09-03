@@ -1,23 +1,15 @@
-import axios from 'axios';
+import api from '../api';
 
-const API_URL = `${import.meta.env.VITE_API_URL}/api/favorites`;
-
-export const getFavorites = async (token) => {
-  const res = await axios.get(API_URL, {
-    headers: { Authorization: `Bearer ${token}` }
-  });
+export const getFavorites = async () => {
+  const res = await api.get('/api/favorites');
   return res.data;
 };
 
-export const addFavorite = async (movie, token) => {
-  const res = await axios.post(API_URL, movie, {
-    headers: { Authorization: `Bearer ${token}` }
-  });
+export const addFavorite = async (movie) => {
+  const res = await api.post('/api/favorites', movie);
   return res.data;
 };
 
-export const removeFavorite = async (id, token) => {
-  await axios.delete(`${API_URL}/${id}`, {
-    headers: { Authorization: `Bearer ${token}` }
-  });
+export const removeFavorite = async (id) => {
+  await api.delete(`/api/favorites/${id}`);
 };

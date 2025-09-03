@@ -15,7 +15,7 @@ export default function LoginForm() {
     setMsg(null);
     setLoading(true);
     try {
-      const ok = await login(email, password); // <-- σωστά ορίσματα
+      const ok = await login(email, password); // σωστά ορίσματα
       if (ok) {
         setMsg(`Welcome ${email}`);
         navigate("/home");

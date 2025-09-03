@@ -9,17 +9,8 @@ export function AuthProvider({ children }) {
   const [token, setToken] = useState(null);
   const [user, setUser] = useState(null);
 
-  // ---- LOGIN ----
+  // LOGIN
   const login = async (email, password) => {
-    if (DEMO) {
-    const fakeUser = { id: 1, name: 'User', email: email || 'user@demo.com' };
-    const fakeToken = 'demo-token';
-    setUser(fakeUser);
-    setToken(fakeToken);
-    localStorage.setItem('user', JSON.stringify(fakeUser));
-    localStorage.setItem('token', fakeToken);
-    return true;
-    }
     try {
       const res = await api.post(`/api/auth/login`, { email, password });
       const { user: userData, token: tokenValue } = res.data || {};
@@ -28,7 +19,6 @@ export function AuthProvider({ children }) {
         console.error("Login response missing token/user");
         return false;
       }
-
       setUser(userData);
       setToken(tokenValue);
       localStorage.setItem("token", tokenValue);

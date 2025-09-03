@@ -1,7 +1,7 @@
 {
   "name": "frontend",
   "private": true,
-  "homepage": "https://lampros99.github.io/",
+  "homepage": "https://lampros99.github.io/Movies-App/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {

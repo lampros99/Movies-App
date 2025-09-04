@@ -35,8 +35,8 @@ export const FavoritesProvider = ({ children }) => {
   const addFavorite = async (movie) => {
     try {
       const apiUrl = import.meta.env.VITE_API_URL;
-      const movieId = String(movie.id);                     // ✅ στείλ’ το ως string
-      const poster = movie.poster_path || movie.posterPath; // ✅ μπορεί να λείπει
+      const movieId = String(movie.id);                     //  στέλνει ως string
+      const poster = movie.poster_path || movie.posterPath; //  μπορεί να λείπει
       const data = poster
         ? { movieId, title: movie.title, posterPath: poster }
         : { movieId, title: movie.title };

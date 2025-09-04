@@ -1,7 +1,6 @@
 /* eslint-disable react-refresh/only-export-components */
 import { createContext, useState, useEffect, useContext } from "react";
 import api from "../api";
-const DEMO = import.meta.env.VITE_DEMO === 'true';
 
 export const AuthContext = createContext();
 

@@ -17,6 +17,9 @@ app.use(express.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/favorites', favoritesRoutes);
 
+// Swagger /api-docs
+require('./swagger')(app);
+
 // Health check
 app.get('/health', (req, res) => res.send('Backend is running!'));
 

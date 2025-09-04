@@ -46,6 +46,5 @@ npm install
 
 ### Clone the repository:
 ```bash
-git clone https://github.com/lampros99/CF7-Final-Project.git
-cd CF7-Final-Project/frontend
+git clone https://github.com/lampros99/Movies-App.git
 

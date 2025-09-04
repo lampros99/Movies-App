@@ -1,4 +1,5 @@
 import Favorites from './pages/Favorites';
+import { useEffect } from 'react';
 import { Routes, Route, Navigate} from 'react-router-dom';
 import useAuth from './hooks/useAuth';
 import Home from './pages/Home';
@@ -9,17 +10,25 @@ import ProtectedRoute from './components/ProtectedRoute';
 import Register from './pages/Register';
 import '../style.css';
 import Login from './pages/Login';
+import Footer from './components/footer';
+// import api from './api';
+
+
 
 
 function App() {
 //  const token = localStorage.getItem("token");
 const {token} = useAuth();
 
+ useEffect(() => {
+    // console.log("API =", api.defaults.baseURL);
+  }, []);
+
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="flex flex-col min-h-screen bg-gray-100">
       {/* <FavoritesProvider> */}
         <NavBar />
-        <main className="p-4 max-w-7xl mx-auto">
+        <main className="flex-grow p-4 pt-16 pb-16 max-w-7xl mx-auto w-full">
           <Routes>
             <Route path="/" element={ token ? <Navigate to="/home" /> : <Navigate to="/login" />} />
             <Route path='/home' element={
@@ -38,9 +47,11 @@ const {token} = useAuth();
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </main>
+        <Footer />
       {/* </FavoritesProvider> */}
     </div>
   );
+
 }
 
 export default App;

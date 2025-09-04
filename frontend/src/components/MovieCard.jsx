@@ -28,7 +28,7 @@ function MovieCard({ movie }) {
         <img
           src={imgUrl}
           alt={movie.title}
-          className="w-full h-auto block"
+          className="w-full h-57 object-cover block"
         />
         <button
           className={`absolute top-2 right-2 p-1 rounded-full bg-white bg-opacity-75 hover:bg-opacity-100 transition ${
@@ -40,7 +40,7 @@ function MovieCard({ movie }) {
           <FavoriteIcon />
         </button>
       </div>
-      <div className="p-4 movie-info">
+      <div className="p-3 movie-info">
         <h3 className="text-lg font-semibold mb-1">{movie.title}</h3>
         <p className="text-sm text-gray-500">{movie.release_date}</p>
       </div>

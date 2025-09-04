@@ -8,7 +8,7 @@ async function createDefaultUser() {
     const name = process.env.DEFAULT_USER_NAME || "Admin";
     const password = process.env.DEFAULT_USER_PASSWORD || "admin123";
 
-    // Έλεγξε αν υπάρχει ήδη
+    // Ελέγχουμε αν υπάρχει ήδη ο χρήστης
     const existingUser = await User.findOne({ where: { email } });
     if (existingUser) {
       console.log(`ℹ️ Ο χρήστης "${email}" υπάρχει ήδη.`);
